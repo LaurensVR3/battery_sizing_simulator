@@ -1,0 +1,12 @@
+{
+  "domain": "battery_sizing_simulator",
+  "name": "Battery Sizing Simulator",
+  "version": "1.0.0",
+  "documentation": "https://github.com/yourusername/battery-sizing-simulator",
+  "issue_tracker": "https://github.com/yourusername/battery-sizing-simulator/issues",
+  "requirements": [],
+  "dependencies": ["recorder"],
+  "codeowners": [],
+  "iot_class": "local_polling",
+  "config_flow": true
+}
