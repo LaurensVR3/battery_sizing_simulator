@@ -1,0 +1,80 @@
+{
+  "title": "Batterijgrootte Simulator",
+  "config": {
+    "step": {
+      "sensors": {
+        "title": "Netsensoren",
+        "description": "Selecteer uw netto-injectie (export) en netto-afname (import) sensoren. Deze moeten langetermijnstatistieken hebben ingeschakeld in de HA recorder.",
+        "data": {
+          "grid_export_sensor": "Netto-injectiesensor (PV surplus naar net)",
+          "grid_import_sensor": "Netto-afnamesensor (stroom van net)"
+        }
+      },
+      "battery": {
+        "title": "Batterijparameters",
+        "description": "Stel de fysieke eigenschappen in van de batterij die u wilt evalueren.",
+        "data": {
+          "battery_chemistry": "Batterijchemie",
+          "capacity_min": "Minimale te simuleren capaciteit (kWh)",
+          "capacity_max": "Maximale te simuleren capaciteit (kWh)",
+          "capacity_step": "Stapgrootte capaciteit (kWh)",
+          "max_dod": "Maximale ontladingsdiepte (0–1, bijv. 0.9 voor LFP)",
+          "efficiency_charge": "Laadrendement AC→DC (bijv. 0.97)",
+          "efficiency_discharge": "Ontlaadrendement DC→AC (bijv. 0.97)",
+          "self_discharge_daily": "Dagelijkse zelfontlading (fractie, bijv. 0.0003)",
+          "reserve_capacity": "Gereserveerde SOC voor noodstroom (bijv. 0.0 = geen)"
+        }
+      },
+      "financial": {
+        "title": "Financiële Parameters",
+        "description": "Stel tarieven en investeringskosten in. Belgische standaardwaarden zijn vooringevuld.",
+        "data": {
+          "injection_tarief": "Injectietarief (€/kWh, vergoeding voor injectie)",
+          "injection_tariff": "Injectietarief (€/kWh)",
+          "offtake_tariff_day": "Dagtarief afname (€/kWh)",
+          "offtake_tariff_night": "Nachttarief afname (€/kWh)",
+          "day_start_hour": "Begin dagtarief (uur, 0–23)",
+          "day_end_hour": "Einde dagtarief (uur, 0–23)",
+          "battery_cost_per_kwh": "Batterijkostprijs geïnstalleerd (€/kWh, all-in)",
+          "battery_lifespan": "Levensduur batterij (jaren)",
+          "annual_degradation": "Jaarlijkse capaciteitsdegradatie (fractie, bijv. 0.02)",
+          "discount_rate": "Discontovoet voor NPV (fractie, bijv. 0.03)",
+          "electricity_price_inflation": "Jaarlijkse elektriciteitsprijsinflatie (fractie, bijv. 0.03)"
+        }
+      },
+      "advanced": {
+        "title": "Geavanceerde Opties",
+        "description": "Piekafvlakking (Fluvius capaciteitstarief) en simulatieschema.",
+        "data": {
+          "enable_peak_shaving": "Piekafvlakking simuleren (Fluvius capaciteitstarief)",
+          "peak_threshold_kw": "Piekdrempel (kW, Fluvius = 2.5 kW)",
+          "scan_interval_hours": "Simulatie herhalen elke N uren"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Kan geen verbinding maken met recorder statistieken.",
+      "no_data": "Geen statistieken gevonden voor de geselecteerde sensoren."
+    },
+    "abort": {
+      "already_configured": "Batterijgrootte Simulator is al geconfigureerd."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Instellingen bijwerken",
+        "data": {
+          "injection_tariff": "Injectietarief (€/kWh)",
+          "offtake_tariff_day": "Dagtarief afname (€/kWh)",
+          "offtake_tariff_night": "Nachttarief afname (€/kWh)",
+          "battery_cost_per_kwh": "Batterijkostprijs (€/kWh)",
+          "battery_lifespan": "Levensduur batterij (jaren)",
+          "enable_peak_shaving": "Piekafvlakking simuleren",
+          "peak_threshold_kw": "Piekdrempel (kW)",
+          "scan_interval_hours": "Simulatie herhalen elke N uren"
+        }
+      }
+    }
+  }
+}
