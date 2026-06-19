@@ -1,0 +1,79 @@
+{
+  "title": "Battery Sizing Simulator",
+  "config": {
+    "step": {
+      "sensors": {
+        "title": "Grid Sensors",
+        "description": "Select your grid export (injection) and import (offtake) energy sensors. These must have long-term statistics enabled.",
+        "data": {
+          "grid_export_sensor": "Grid Export Sensor (injection / PV surplus)",
+          "grid_import_sensor": "Grid Import Sensor (offtake / consumption)"
+        }
+      },
+      "battery": {
+        "title": "Battery Parameters",
+        "description": "Configure the physical properties of the battery you want to evaluate.",
+        "data": {
+          "battery_chemistry": "Battery Chemistry",
+          "capacity_min": "Minimum capacity to simulate (kWh)",
+          "capacity_max": "Maximum capacity to simulate (kWh)",
+          "capacity_step": "Capacity step size (kWh)",
+          "max_dod": "Maximum Depth of Discharge (0–1, e.g. 0.9 for LFP)",
+          "efficiency_charge": "Charge efficiency AC→DC (e.g. 0.97)",
+          "efficiency_discharge": "Discharge efficiency DC→AC (e.g. 0.97)",
+          "self_discharge_daily": "Daily self-discharge fraction (e.g. 0.0003)",
+          "reserve_capacity": "Reserve SOC fraction for backup power (e.g. 0.0 = none)"
+        }
+      },
+      "financial": {
+        "title": "Financial Parameters",
+        "description": "Configure tariffs and investment costs. Belgium defaults are pre-filled.",
+        "data": {
+          "injection_tariff": "Injection tariff (€/kWh, what you receive for grid export)",
+          "offtake_tariff_day": "Day offtake tariff (€/kWh)",
+          "offtake_tariff_night": "Night offtake tariff (€/kWh)",
+          "day_start_hour": "Day tariff start hour (0–23)",
+          "day_end_hour": "Day tariff end hour (0–23)",
+          "battery_cost_per_kwh": "Battery installed cost (€/kWh all-in)",
+          "battery_lifespan": "Battery lifespan (years)",
+          "annual_degradation": "Annual capacity degradation (fraction, e.g. 0.02)",
+          "discount_rate": "Discount rate for NPV (fraction, e.g. 0.03)",
+          "electricity_price_inflation": "Annual electricity price inflation (fraction, e.g. 0.03)"
+        }
+      },
+      "advanced": {
+        "title": "Advanced Options",
+        "description": "Configure peak shaving (Fluvius capaciteitstarief) and simulation schedule.",
+        "data": {
+          "enable_peak_shaving": "Enable peak shaving simulation (Fluvius capaciteitstarief)",
+          "peak_threshold_kw": "Peak shaving threshold (kW, Fluvius = 2.5 kW)",
+          "scan_interval_hours": "Re-run simulation every N hours"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot connect to recorder statistics.",
+      "no_data": "No statistics data found for the selected sensors."
+    },
+    "abort": {
+      "already_configured": "Battery Sizing Simulator is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Update Settings",
+        "data": {
+          "injection_tariff": "Injection tariff (€/kWh)",
+          "offtake_tariff_day": "Day offtake tariff (€/kWh)",
+          "offtake_tariff_night": "Night offtake tariff (€/kWh)",
+          "battery_cost_per_kwh": "Battery installed cost (€/kWh)",
+          "battery_lifespan": "Battery lifespan (years)",
+          "enable_peak_shaving": "Enable peak shaving simulation",
+          "peak_threshold_kw": "Peak shaving threshold (kW)",
+          "scan_interval_hours": "Re-run simulation every N hours"
+        }
+      }
+    }
+  }
+}
